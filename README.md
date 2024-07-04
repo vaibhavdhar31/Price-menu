@@ -6,7 +6,8 @@ Welcome to the Subscription Plan Website! This interactive web application helps
 
 ## 📸 Website Preview
 
-![Subscription Plan Website](https://user-images.githubusercontent.com/YOUR_IMAGE_PATH)
+![Subscription Plan Website] ![Screenshot 2024-07-05 012205](https://github.com/vaibhavdhar31/Price-menu/assets/98601744/c09f3a7e-e9cc-4ad1-8f5c-eca45f6d586a)
+
 
 
 ## 📋 Table of Contents
