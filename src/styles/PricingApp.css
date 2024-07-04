@@ -1,0 +1,386 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-fw: 700;
+  --primary-fs: 15px;
+  --primary-linear-gradient: hsl(298, 97%, 46%), hsl(237, 63%, 64%);
+  --neutral-very-light-grayish-blue: hsl(240, 78%, 98%);
+  --neutral-light-grayish-blue: hsl(234, 14%, 74%);
+  --neutral-grayish-blue: hsl(233, 13%, 49%);
+  --neutral-dark-grayish-blue: hsl(232, 13%, 33%);
+  --neutral-white: hsl(0, 0%, 100%);
+}
+
+.PricingApp {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--primary-fw);
+  font-size: var(--primary-fs);
+  display: grid;
+  place-items: center;
+  background-color: var(--neutral-very-light-grayish-blue);
+  /* background-image: url("../images/bg-top.svg"); */
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 375px 658px;
+  z-index: 999;
+}
+
+.PricingApp::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 353px;
+  width: 100%;
+  height: 304px;
+  /* background-image: url("../images/bg-bottom.svg"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--primary-fw);
+  font-size: var(--primary-fs);
+}
+
+/*toggle*/
+.PricingApp .price-switch {
+  --border-radius: 10em;
+  display: block;
+  width: 50px;
+  height: 25px;
+  border-radius: var(--border-radius);
+  position: relative;
+  cursor: pointer;
+}
+
+.PricingApp .price-checkbox {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.PricingApp .switch-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 25px;
+  border-radius: var(--border-radius);
+  background: #2390EB;
+}
+
+.PricingApp .switch-slider:is(:hover, :focus-visible) {
+  opacity: 0.7;
+}
+
+.PricingApp .switch-slider::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 20px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: var(--neutral-very-light-grayish-blue);
+  transform: translateX(calc(100% + 2px));
+  transition: 0.3s ease;
+}
+
+.PricingApp .price-checkbox:checked + .switch-slider::before {
+  transform: translateX(0%);
+}
+
+/*USD and INR button*/
+
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  height: 140px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+
+.button-cover:before {
+  /* counter-increment: button-counter; */
+  /* content: counter(button-counter); */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #d7e3e3;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 5%;
+  width: 110px;
+  height: 40px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.button.b2 {
+  border: 1px solid #AFAFAF;
+  border-radius: 5px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+#button-10 .knobs:before,
+#button-10 .knobs:after,
+#button-10 .knobs span {
+  position: absolute;
+  top: 0px;
+  width: 55px;
+  height: 40px;
+  font-size: 10px;
+  /* font-weight: bold; */
+  /* text-align: center; */
+  line-height: 1;
+  padding-top: 13px;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+  margin-left: -5px;
+}
+
+#button-10 .knobs:before {
+  content: "";
+  left: 4px;
+  background-color: #03a9f4;
+}
+
+#button-10 .knobs:after {
+  content: "INR";
+  font-size: 1.15em;
+  right: -34px;
+  color: #4e4e4e;
+  margin-right: 20px;
+  margin-top: -2px;
+  font-weight: 100;
+}
+
+#button-10 .knobs span {
+  display: inline-block;
+  left: 4px;
+  color: #fff;
+  z-index: 1;
+  font-size: 1.15em;
+  margin-top: -2px;
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+#button-10 .checkbox:checked + .knobs span {
+  color: #4e4e4e;
+}
+
+#button-10 .checkbox:checked + .knobs:before {
+  left: 70px;
+  background-color: #03a9f4;
+  margin-left: -15px;
+}
+
+#button-10 .checkbox:checked + .knobs:after {
+  color: #fff;
+}
+
+
+
+
+
+/*------*/
+
+.PricingApp .app-container {
+  width: min(90%, 70rem);
+}
+
+.PricingApp header .header-topic {
+  margin-top: 50px;
+  text-align: center;
+  color: var(--neutral-dark-grayish-blue);
+}
+.PricingApp header .header-para {
+  margin-top: 7px;
+  font-family: "Montserrat", sans-serif;
+
+  text-align: center;
+  color: var(--neutral-dark-grayish-blue);
+}
+
+.PricingApp header > .header-row {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+
+.PricingApp .pricing-cards {
+  margin-top: -7em;
+  min-height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/*For card one*/
+.PricingApp .title_deg{
+  margin-top: -10px;
+  color: black;
+  font-size: 1.5em;
+}
+.PricingApp .strikethrough {
+  margin-top: 1px;
+  text-decoration: line-through;
+  color: #FF0000;
+  font-size: 1.2em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+.PricingApp .price_deg{
+  margin-top: -30px;
+  color: black;
+  font-size: 0.9em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.PricingApp .month_deg{
+  margin-top: -22px;
+  color: #393838;
+  font-size: 0.3em;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+.PricingApp .app-container .pricing-cards #resumate_deg {
+  font-size: 12px;
+  border-top: none;
+}
+.PricingApp .app-container .pricing-cards #assessment_deg {
+  font-size: 18px;
+  border-top: none;
+}
+
+
+
+
+/*For card two*/
+.PricingApp .title1_deg{
+  color: white;
+  font-size: 1.6em;
+}
+.PricingApp .strikethrough1{
+  margin-top: 1px;
+  text-decoration: line-through;
+  color: #FF0000;
+  font-size: 1.3em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+.PricingApp .price_deg1{
+  margin-top: -30px;
+  color: white;
+  font-size: 1em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.PricingApp .month_deg1{
+  margin-top: -22px;
+  color: rgb(219, 219, 219);
+  font-size: 0.4em;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+.PricingApp .app-container .pricing-cards #resumate1_deg {
+  font-size: 13px;
+  border-top: none;
+}
+
+
+
+
+/*For card three*/
+.PricingApp .title3_deg{
+  margin-top: -10px;
+  margin-bottom: 30px;
+  color: black;
+  font-size: 1.5em;
+}
+.PricingApp .month3_deg{
+  margin-top: -18px;
+  color: #393838;
+  font-size: 0.3em;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+
+
+/*Pricing Table*/
+.PricingApp .pricing-table{
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--neutral-dark-grayish-blue);
+}
+
+
+@media screen and (max-width: 800px) {
+  .PricingApp {
+    padding-block: 4em;
+  }
+  .PricingApp .pricing-cards {
+    flex-direction: column;
+    gap: 2em;
+  }
+}

@@ -1,0 +1,104 @@
+.PricingCardMiddle {
+    padding: 2em;
+    border-radius: 1em;
+    text-align: center;
+    color: var(--neutral-dark-grayish-blue);
+    /* background-color: var(--neutral-white); */
+    background: linear-gradient(#E5EFFA, #CFE6FF);
+    width: min(100%, 30rem);
+  }
+  
+  .PricingCardMiddle:nth-child(2) {
+    /* background-image: linear-gradient(to right, var(--primary-linear-gradient)); */
+    background: linear-gradient(#2596F5, #16588F);
+    color: var(--neutral-white);
+    margin: 20px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .PricingCardMiddle header > .card-price {
+    margin-block: 1rem;
+    font-size: 3.5em;
+  }
+  
+  .PricingCardMiddle .card-features > * {
+    padding-block: 1em;
+    border-bottom: 1px solid var(--neutral-light-grayish-blue);
+  }
+
+  .PricingCardMiddle .card-features .card {
+    padding-block: 1em;
+    border-bottom: 1px solid var(--neutral-light-grayish-blue);
+  }
+  
+  .PricingCardMiddle .card-features :first-child {
+    border-top: 1px solid var(--neutral-light-grayish-blue);
+  }
+  
+  .PricingCardMiddle .card-features :last-child {
+    margin-bottom: 2em;
+  }
+  
+  .PricingCardMiddle .card-btn {
+    cursor: pointer;
+    padding-block: 1em;
+    width: 100%;
+    border-radius: 0.5em;
+    background: #2495F5;
+    border: 2px solid transparent;
+    outline: transparent;
+    transition: 0.125s ease;
+    color: var(--neutral-white);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 20px;
+  }
+  
+  .PricingCardMiddle .card-btn:is(:focus-visible, :hover) {
+    color: hsl(0, 0%, 0%);
+    background: linear-gradient(#E4EFFA, #E4EFFA) padding-box,
+    linear-gradient(#2596F5, #16588F) border-box;
+    border-radius: 0.5em;
+    border: 2px solid transparent;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.24), 0 8px 30px 0 rgba(0,0,0,0.22);
+  }
+  
+  .PricingCardMiddle:nth-child(2) .card-btn {
+    background: transparent;
+    background: #E4EFFA; 
+    color: hsl(0, 0%, 0%);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  .PricingCardMiddle:nth-child(2) .card-btn:is(:focus-visible, :hover) {
+    color: var(--neutral-white);
+    background: linear-gradient(#2596F5, #2596F5)
+        padding-box,
+        linear-gradient(#E5EFFA, #CFE6FF) border-box;
+    border-radius: 0.5em;
+    border: 2px solid transparent;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.24), 0 8px 30px 0 rgba(0,0,0,0.22);
+  }
+   
+  .PricingCardMiddle .card-features .card-storage{
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .PricingCardMiddle {
+      width: min(100%, calc(100% - 70px)); 
+      margin: 20px; 
+    }
+    
+    .PricingCardMiddle:nth-child(2) {
+      margin: 20px 0; 
+    }
+  
+    .PricingCardMiddle:nth-child(2) {
+      align-self: center;
+    }
+  }
+
